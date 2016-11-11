@@ -73,7 +73,7 @@ We needed a cli tool that just works without installing anything else and does n
 ## For Devs
 
 * Please use go1.7+
-* Clone repository into yourProjectDirectory/src/github.com/mike-zenith/kmstool
+* Clone repository into yourProjectDirectory/src/github.com/foodpanda/kmstool
 * Set your GOPATH to yourProjectDirectory
 * Set PATH to yourProjectDirectory/bin
 * Run `make`
