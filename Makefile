@@ -17,8 +17,9 @@ test: ## Run tests and checks
 	go test $(TEST) -v -timeout=30s -parallel=4
 
 build:	## Generate go binary
-	go generate
+	go get
 	go install
+	go generate
 
 release: build ## Make release
 	mkdir -p release
