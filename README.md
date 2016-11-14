@@ -1,6 +1,6 @@
 ## KMSTool
 
-Cli tool to encrypt/decrypt strings around regexp.
+Cli tool to encrypt/decrypt strings around regexp with aws kms.
 
 ```text
 # help
