@@ -1,5 +1,5 @@
 GOFMT_FILES?=$$(find . -name '*.go' | grep -v vendor)
-TEST?=$$(go list ./... | grep -v '/terraform/vendor/' | grep -v '/builtin/bins/')
+TEST?=$$(go list ./...)
 
 .PHONY: help
 
