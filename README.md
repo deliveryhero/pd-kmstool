@@ -82,7 +82,7 @@ We needed a cli tool that just works without installing anything else and does n
 * Run `make fmt`
 
 
-
+--
 
 The MIT License (MIT)
 Copyright (c) 2016 Foodpanda GmbH, https://foodpanda.io
