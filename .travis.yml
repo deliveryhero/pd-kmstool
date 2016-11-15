@@ -1,0 +1,20 @@
+language: go
+go:
+    - 1.7
+    - master
+before_deploy:
+    - make release
+script:
+    - make
+    - make test
+deploy:
+    provider: releases
+    api_key:
+        secure: iYJgHbbWmWaYeV6bAIKbK2mgB6YH7rb5HdK1j8eZPKRDR824gLmFPRsspp2GGBAGL6C1IQdpHigq2hqg8AJ3BsRukBBzpsgl+4PiUE7Wspq6uDSXBv3qjRlXuuhk/MYZ8+DZ0/J39bS9ZN8cHUzndZcwHBjBnl5mQgNYe971aW0hBzT5lw7gRqwx8s8/nyUX2DRoihgEEaPk04VlDMNPhtCxdK4HwXR410imn52cKStvrGfkMZy8oDHUCwJMwJdh6bJsNtB5zsmUYPb0g90RT/N5Mu4jv4dBwYuG7XhSW/Ah7gCUs10/WrDqM8uVQ3+HC4TQnMGQvcdfLWblpasdfhiGquU844SYZJrP55vS6l4fjXJAgFJht0N1y3D3zTnuP8F9o6pWVRGG//b912bUppf1uJK+b5CgkfMYY7LX++I+mUmPuNvOKgNN8klOmK5b7OGwt/iPIpPrXvlebHPg8xYEC8Ho8FzQhVCVo0as/kVlNlZinSL+uMZHyfuHKSEoOTHYq9A9HQ8hg63sI1zqrpc/ns8HPZ0VFs+45tIOELDYPz219IZjnHVaWX7azP6HbyJQei02RKatAKnRJtb4TkmcmPJLr4QNMVt09G+ZmDXz5xGB2SEm42F7/FJWmVahSK0HNtCz4VpzAo2cBBESaFdr4qCvnKqFewT9RfrhabI=
+    file:
+        - release/kmstool-linux-amd64
+        - release/kmstool-linux-386
+        - release/kmstool-linux-arm
+    on:
+        repo: foodpanda/kmstool
+        tags: true

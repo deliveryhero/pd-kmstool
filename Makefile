@@ -1,5 +1,6 @@
 GOFMT_FILES?=$$(find . -name '*.go' | grep -v vendor)
 TEST?=$$(go list ./...)
+PACKAGE=github.com/foodpanda/kmstool
 
 .PHONY: help
 
@@ -16,5 +17,13 @@ test: ## Run tests and checks
 	go test $(TEST) -v -timeout=30s -parallel=4
 
 build:	## Generate go binary
-	go generate
+	go get
 	go install
+	go generate
+
+release: build ## Make release
+	mkdir -p release
+	GOOS=linux GOARCH=amd64 go build -o release/kmstool-linux-amd64 $(package)
+	GOOS=linux GOARCH=386 go build -o release/kmstool-linux-386 $(package)
+	GOOS=linux GOARCH=arm go build -o release/kmstool-linux-arm $(package)
+
